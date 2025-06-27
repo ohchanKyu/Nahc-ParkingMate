@@ -56,9 +56,11 @@
 * 처음 접속 시 현재 위치를 좌표로 표현
 * 지도의 축소 레벨에 따라 마커 표시
 * 서울 부근의 현재 교통량 정보 제공
-* 마커 클릭을 통해 주차장 명, 현재 운영 여부현재 주차 가능한 대수 정보 파악 가능
-<img width="300" alt="image" src="https://github.com/user-attachments/assets/efe44743-20c2-4c9f-ab2d-fc6d7d401fb6" />
-
+* 마커 클릭을 통해 주차장 명, 현재 운영 여부 현재 주차 가능한 대수 정보 파악 가능
+<p display="flex">
+<img width="270" alt="image" src="https://github.com/user-attachments/assets/92034860-3d8d-41d0-9b98-a68047babb47" />
+<img width="270" alt="image" src="https://github.com/user-attachments/assets/efe44743-20c2-4c9f-ab2d-fc6d7d401fb6" />
+</p>
 
 <br>
 
