@@ -36,7 +36,7 @@
 - **Oracle** <br>
 - **CloudType** <br>
 
-<br>
+<hr>
 
 ### 데이터 활용
 #### 한국산업안전보건공단
@@ -46,7 +46,7 @@
 #### 공공데이터포털 
 - 한국교통안전공단_전국공영주차장정보 <br>
 
-<br>
+<hr>
 
 ### 화면 기능 상세 정보
 <p>$\bf{\large{\color{#6580DD} 홈 \ 화면 }}$</p>
@@ -107,7 +107,7 @@
 <img width="270" alt="image" src="https://github.com/user-attachments/assets/8dc23e23-d635-4b03-82f8-325fbda98ada" />
 </p>
 
-<br>
+<hr>
 
 ### 배포 URL
 - https://www.nahc-parking.o-r.kr/
