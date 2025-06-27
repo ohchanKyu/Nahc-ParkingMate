@@ -1,0 +1,10 @@
+.container {
+    width: 100%;
+    max-width: 400px;
+    min-height: 820px;
+    position: relative;
+    margin: 0 auto;
+    background-color: white;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
