@@ -64,6 +64,23 @@
 
 <br>
 
+<p>$\bf{\large{\color{#6580DD} 즐겨찾기와 \ 주변탐색 \ 및 \ 주소 검색 }}$</p>
+
+#### 기능
+* 현재 사용자 위치를 기준으로 반경 내 주차장을 거리순으로 제공
+* GPS를 통해 현재 위치를 자동 감지하고, 위치정보를 기반으로 <br>
+  가까운 순으로 리스트 제공 주차장까지의 거리, 예상 도착 시간, <br>
+  네이버 지도 연동 등의 추가 정보도 함께 제공 가능 <br>
+* 즐겨찾기 기능을 통해 빠르게 운영 여부 및 현재 주차 대수 확인
+* 홈 화면에서 쉽게 주소를 변환하여 해당 위치로 이동
+<p display="flex">
+<img width="270" alt="image" src="https://github.com/user-attachments/assets/ead597ff-25ec-4a2e-a1e7-6b0381cee72a" />
+<img width="270" alt="image" src="https://github.com/user-attachments/assets/f3099f1a-fab8-4d76-8902-8be04c2d9830" />
+<img width="270" alt="image" src="https://github.com/user-attachments/assets/1a264cd3-3978-45aa-b5a1-818f8639dcbb" />
+</p>
+
+<br>
+
 ### 배포 URL
 - https://www.nahc-parking.o-r.kr/
 - 현재 오라클 및 클라우드 타입 운영 종료
