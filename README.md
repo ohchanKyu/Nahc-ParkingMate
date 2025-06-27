@@ -79,6 +79,36 @@
 <img width="270" alt="image" src="https://github.com/user-attachments/assets/1a264cd3-3978-45aa-b5a1-818f8639dcbb" />
 </p>
 
+
+<p>$\bf{\large{\color{#6580DD} 주차장 \ 검색 \ 및 \ 상세정보 }}$</p>
+
+#### 기능
+* 사용자가 입력한 키워드를 기반으로 주차장을 검색
+* 주차장명, 지역구, 요금 유무, 운영 유무 등의 정보를 포함한 다양한 검색 필터 및 자동완성 기능 지원
+* 해당 장소의 지도 및 로드맵을 제공하며 좌표를 제어하여 자유로운 로드맵 화면 제어
+* 복합적인 주차장 정보 및 현재 주차가능한 대수 정보 제공
+<p display="flex">
+<img width="270" alt="image" src="https://github.com/user-attachments/assets/e4157ff1-a520-4b4e-b6d6-2ffdf553aef9" />
+<img width="270" alt="image" src="https://github.com/user-attachments/assets/d3c7d00f-9fee-4035-8b24-ebfb1440a73b" />
+<img width="270" alt="image" src="https://github.com/user-attachments/assets/9e0737a9-9c9a-4a3b-8f1d-7ffcec320ff0" />
+</p>
+<p display="flex">
+<img width="270" alt="image" src="https://github.com/user-attachments/assets/787efc00-5da6-4bad-a763-6b2b5d31df0f" />
+<img width="270" alt="image" src="https://github.com/user-attachments/assets/491c7bba-ea6d-4c8d-aaf8-8a08b5edafd7" />
+</p>
+
+
+<p>$\bf{\large{\color{#6580DD} 실시간 \ 채팅 \ 기능 }}$</p>
+
+#### 기능
+* 사용자가 특정 주차장에 대한 실시간 정보나 의견을 주고받을 수 있는 채팅 기능 제공 
+* WebSocket 등을 활용한 비동기 실시간 통신 구현
+<p display="flex">
+<img width="270" alt="image" src="https://github.com/user-attachments/assets/9f94a8a5-1334-49f1-9c71-792aa7925505" />
+<img width="270" alt="image" src="https://github.com/user-attachments/assets/c70dc909-99a1-4247-8f35-cbf386c43224" />
+<img width="270" alt="image" src="https://github.com/user-attachments/assets/8dc23e23-d635-4b03-82f8-325fbda98ada" />
+</p>
+
 <br>
 
 ### 배포 URL
