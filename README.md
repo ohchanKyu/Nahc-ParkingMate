@@ -112,3 +112,258 @@
 ### 배포 URL
 - https://www.nahc-parking.o-r.kr/
 - 현재 오라클 및 클라우드 타입 운영 종료
+
+<br>
+
+### 아키텍쳐
+#### 디렉터리 구조
+```
+📦nahc-parking
+┣ 📂public
+ ┃ ┗ 📜logo.png
+ ┣ 📂src
+ ┃ ┣ 📂api
+ ┃ ┃ ┣ 📜AuthService.js
+ ┃ ┃ ┣ 📜BookmarkService.js
+ ┃ ┃ ┣ 📜ChatRoomPinService.js
+ ┃ ┃ ┣ 📜ChatRoomService.js
+ ┃ ┃ ┣ 📜ChatService.js
+ ┃ ┃ ┣ 📜LocationService.js
+ ┃ ┃ ┣ 📜MemberService.js
+ ┃ ┃ ┗ 📜ParkingLotService.js
+ ┃ ┣ 📂assets
+ ┃ ┃ ┣ 📜chat.png
+ ┃ ┃ ┣ 📜gps.png
+ ┃ ┃ ┣ 📜loading.gif
+ ┃ ┃ ┣ 📜logo.png
+ ┃ ┃ ┣ 📜placeholder.png
+ ┃ ┃ ┗ 📜Spinner.gif
+ ┃ ┣ 📂components
+ ┃ ┃ ┣ 📂AroundSearchPageComponents
+ ┃ ┃ ┃ ┣ 📜AroundSearch.jsx
+ ┃ ┃ ┃ ┣ 📜AroundSearch.module.css
+ ┃ ┃ ┃ ┣ 📜AroundSearchList.jsx
+ ┃ ┃ ┃ ┗ 📜AroundSearchList.module.css
+ ┃ ┃ ┣ 📂AuthPageComponents
+ ┃ ┃ ┃ ┣ 📜AuthInput.module.css
+ ┃ ┃ ┃ ┣ 📜FindIdContainer.jsx
+ ┃ ┃ ┃ ┣ 📜FindIdInput.jsx
+ ┃ ┃ ┃ ┣ 📜FindPasswordContainer.jsx
+ ┃ ┃ ┃ ┣ 📜FindPasswordInput.jsx
+ ┃ ┃ ┃ ┣ 📜LoginContainer.jsx
+ ┃ ┃ ┃ ┣ 📜LoginInput.jsx
+ ┃ ┃ ┃ ┣ 📜SignupContainer.jsx
+ ┃ ┃ ┃ ┣ 📜SignupInput.jsx
+ ┃ ┃ ┃ ┗ 📜VerifyCodeInput.jsx
+ ┃ ┃ ┣ 📂BookmarkPageComponents
+ ┃ ┃ ┃ ┣ 📜BookmarkList.jsx
+ ┃ ┃ ┃ ┗ 📜BookmarkList.module.css
+ ┃ ┃ ┣ 📂ChattingPageComponents
+ ┃ ┃ ┃ ┣ 📜AllChatRoomList.jsx
+ ┃ ┃ ┃ ┣ 📜Chat.jsx
+ ┃ ┃ ┃ ┣ 📜Chat.module.css
+ ┃ ┃ ┃ ┣ 📜ChatRoomList.jsx
+ ┃ ┃ ┃ ┣ 📜ChatRoomList.module.css
+ ┃ ┃ ┃ ┣ 📜KeywordRoomForm.jsx
+ ┃ ┃ ┃ ┣ 📜KeywordRoomForm.module.css
+ ┃ ┃ ┃ ┣ 📜MyChatRoom.jsx
+ ┃ ┃ ┃ ┣ 📜MyChatRoom.module.css
+ ┃ ┃ ┃ ┗ 📜MyChatRoomList.jsx
+ ┃ ┃ ┣ 📂MainPageComponents
+ ┃ ┃ ┃ ┣ 📜Clustering.js
+ ┃ ┃ ┃ ┣ 📜ClusterMarker.jsx
+ ┃ ┃ ┃ ┣ 📜EventMarkerContainer.jsx
+ ┃ ┃ ┃ ┣ 📜KakaoMap.jsx
+ ┃ ┃ ┃ ┣ 📜KakaoMap.module.css
+ ┃ ┃ ┃ ┣ 📜KakaoMapSideBar.jsx
+ ┃ ┃ ┃ ┣ 📜MainTab.jsx
+ ┃ ┃ ┃ ┣ 📜MainTab.module.css
+ ┃ ┃ ┃ ┣ 📜Post.jsx
+ ┃ ┃ ┃ ┣ 📜SearchTab.jsx
+ ┃ ┃ ┃ ┣ 📜SearchTab.module.css
+ ┃ ┃ ┃ ┗ 📜TrafficMarkerContainer.jsx
+ ┃ ┃ ┣ 📂PlaceDetailPageComponents
+ ┃ ┃ ┃ ┣ 📜PlaceDetailContent.jsx
+ ┃ ┃ ┃ ┣ 📜PlaceDetailContent.module.css
+ ┃ ┃ ┃ ┣ 📜RoadView.jsx
+ ┃ ┃ ┃ ┗ 📜RoadView.module.css
+ ┃ ┃ ┣ 📂SearchPageComponents
+ ┃ ┃ ┃ ┣ 📜FilterForm.jsx
+ ┃ ┃ ┃ ┣ 📜FilterForm.module.css
+ ┃ ┃ ┃ ┣ 📜FilterResult.jsx
+ ┃ ┃ ┃ ┣ 📜FilterResult.module.css
+ ┃ ┃ ┃ ┣ 📜KeywordForm.jsx
+ ┃ ┃ ┃ ┗ 📜KeywordForm.module.css
+ ┃ ┃ ┗ 📂SettingPageComponents
+ ┃ ┃ ┃ ┣ 📜BookmarkSection.jsx
+ ┃ ┃ ┃ ┣ 📜ButtonSection.jsx
+ ┃ ┃ ┃ ┣ 📜ButtonSection.module.css
+ ┃ ┃ ┃ ┣ 📜DataSection.jsx
+ ┃ ┃ ┃ ┣ 📜DataSection.module.css
+ ┃ ┃ ┃ ┣ 📜ProfileSection.jsx
+ ┃ ┃ ┃ ┗ 📜ProfileSection.module.css
+ ┃ ┣ 📂hooks
+ ┃ ┃ ┗ 📜useGeoLocation.jsx
+ ┃ ┣ 📂layout
+ ┃ ┃ ┣ 📜AppContainer.jsx
+ ┃ ┃ ┣ 📜AppContainer.module.css
+ ┃ ┃ ┣ 📜LoadingModal.jsx
+ ┃ ┃ ┣ 📜LoadingModal.module.css
+ ┃ ┃ ┣ 📜Modal.jsx
+ ┃ ┃ ┗ 📜Modal.module.css
+ ┃ ┣ 📂page
+ ┃ ┃ ┣ 📜AroundSearchPage.jsx
+ ┃ ┃ ┣ 📜AroundSearchPage.module.css
+ ┃ ┃ ┣ 📜AuthPage.jsx
+ ┃ ┃ ┣ 📜AuthPage.module.css
+ ┃ ┃ ┣ 📜BookmarkPage.jsx
+ ┃ ┃ ┣ 📜BookmarkPage.module.css
+ ┃ ┃ ┣ 📜ChattingPage.jsx
+ ┃ ┃ ┣ 📜ChattingPage.module.css
+ ┃ ┃ ┣ 📜MainPage.jsx
+ ┃ ┃ ┣ 📜PlaceDetailPage.jsx
+ ┃ ┃ ┣ 📜PlaceDetailPage.module.css
+ ┃ ┃ ┣ 📜SearchPage.jsx
+ ┃ ┃ ┣ 📜SearchPage.module.css
+ ┃ ┃ ┣ 📜SettingPage.jsx
+ ┃ ┃ ┗ 📜SettingPage.module.css
+ ┃ ┣ 📂store
+ ┃ ┃ ┣ 📜login-context.js
+ ┃ ┃ ┣ 📜LoginProvider.jsx
+ ┃ ┃ ┗ 📜ProtectedRoute.jsx
+ ┃ ┣ 📜App.css
+ ┃ ┣ 📜App.jsx
+ ┃ ┗ 📜main.jsx
+ ┣ 📜index.html
+ ┣ 📜package.json
+ ┣ 📜time.sql
+ ┗ 📜vite.config.js
+📦nahc-parking-backend
+ ┣ 📂src
+ ┃ ┣ 📂main
+ ┃ ┃ ┣ 📂java
+ ┃ ┃ ┃ ┗ 📂kr
+ ┃ ┃ ┃ ┃ ┗ 📂ac
+ ┃ ┃ ┃ ┃ ┃ ┗ 📂dankook
+ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂parkingApplication
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂config
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂converter
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatRoomEntityConverter.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DateToLocalDateTimeKstConverter.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜LocalDateTimeToDateKstConverter.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜MemberEntityConverter.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂principal
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜PrincipalDetails.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜PrincipalDetailsService.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜CorsConfig.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MongoDBConfig.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜RedisConfig.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜SecurityConfig.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜WebMvcConfig.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜WebSocketConfig.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂controller
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜AuthController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜BookmarkController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatRoomController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatRoomPinController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜LocationController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ParkingLotController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜TestController.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂document
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatMessage.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜TrafficMessage.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dto
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂request
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜AddressRequest.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatMessageRequest.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜CoordinateRequest.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜CreateChatRoomRequest.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜FilterRequest.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜FindIdRequest.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜LocationRequest.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜PasswordChangeRequest.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜SignInRequest.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜SignupRequest.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜TokenRequest.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜VerifyCodeRequest.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂response
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ApiMessageResponse.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ApiResponse.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜AuthMailResponse.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜BookmarkParkingLotResponse.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatResponse.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatRoomListResponse.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatRoomResponse.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜CoordinateResponse.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DistanceResponse.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜KeywordListResponse.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜KeywordResponse.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MailResponse.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberResponse.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ParkingLotResponse.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ParkingLotResponseWithRouteInfo.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜RouteResponse.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜TokenResponse.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂entity
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜BaseEntity.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜Bookmark.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatRoom.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatRoomMember.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatRoomPin.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜Member.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜ParkingLot.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂exception
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ApiErrorCode.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ApiException.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜EncryptException.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ErrorCode.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ErrorResponse.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜GlobalExceptionHandler.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MailException.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜TokenErrorCode.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜ValidationException.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂jwt
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜JwtAccessDeniedHandler.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜JwtAuthenticationEntryPoint.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜JwtErrorResponseHandler.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜JwtFilter.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜JwtRedisHandler.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜JwtTokenProvider.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂repository
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜BookmarkRepository.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatMessageRepository.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatRoomMemberRepository.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatRoomPinRepository.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatRoomRepository.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜CurrentParkingLotRepository.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberRepository.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ParkingLotRepository.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜RefreshTokenRepository.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜TrafficMessageRepository.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂service
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜AuthService.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜BookmarkService.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatRedisService.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatRoomPinService.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatRoomService.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ChatService.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ExternalApiService.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜LocationService.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MailService.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberService.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ParkingLotScheduledService.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ParkingLotService.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜ParkingTrafficScheduledService.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂util
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DateUtil.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DecryptConverter.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜DecryptId.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜EncryptionUtil.java
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜ParkingApplication.java
+ ┃ ┃ ┗ 📂resources
+ ┃ ┃ ┃ ┗ 📜application.properties
+ ┣ 📜build.gradle
+ ┗ 📜settings.gradle
+```
